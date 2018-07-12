@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+.pdt {
+    padding-top: 10px;
+}
+.pdr {
+    padding-right: 10px;
+}
+.pdl {
+    padding-left: 30px;
+}
+.font-size {
+    font-size: 16px;
+    vertical-align: middle;
+}
+.back-color {
+    background-color: green;
+}

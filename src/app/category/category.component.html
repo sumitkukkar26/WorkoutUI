@@ -1,0 +1,36 @@
+<div class="category">
+  <div class="container">
+  <form class="form-horizontal">
+    <div class="col-md-offset-4">
+      <h3>Add Category</h3>
+    </div>
+    <div class="row form-group">
+      <div class="col-md-9">
+        <input type="search" placeholder="Search" class="form-control" [(ngModel)]="query" name="search"/>
+      </div>  
+    </div>
+    <div class="row form-group">
+      <div class="col-md-9">
+        <div class="input-group">
+          <input type="text" class="form-control" [(ngModel)]="category.categoryName" name="name">
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default btn-number" [disabled]="!(category.categoryName!='')"(click)="saveCategory()">
+              <span class="glyphicon glyphicon-plus"></span>
+            </button>
+          </span>
+        </div>
+      </div>
+    </div>
+    <ul class="list-group">
+        
+      <li class="list-group-item col-md-9" *ngFor="let cat of categories | searchCategory: query; let i = index">
+        <div class="font-size col-md-4" contenteditable=false id="{{i}}">{{cat.categoryName}}</div>
+        <div class="pull-right">
+          <input type="button" class="btn btn-default" (click)="editCategory($event,i,cat)" value="Edit"/>
+          <input type="button" class="btn btn-default" (click)="deleteCategory(cat)" value="Delete" />
+        </div>
+       </li>
+      </ul>
+  </form>
+  </div>
+</div>

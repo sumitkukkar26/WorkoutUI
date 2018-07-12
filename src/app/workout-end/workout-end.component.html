@@ -1,0 +1,37 @@
+<div class="workoutstart">
+  <div class="container">
+    
+  <form  class="form-horizontal" [formGroup]="workoutForm" (ngSubmit)="endWorkout()">
+    
+    <h3 class="text-center">End Workout</h3>
+    <div class="row form-group">
+      <label class="control-label col-md-2" for="title">Title:</label>
+      <div class="col-md-8">
+        <input type="text" id="title" class="form-control" formControlName="workoutTitle" />
+      </div>
+    </div>
+    <div class="row form-group">
+        <label class="control-label col-md-2" for="note">Note:</label>
+        <div class="col-md-8">
+          <textarea class="form-control" id="note" rows="3" formControlName="comment" ></textarea>
+        </div>
+    </div>
+    <div class="row form-group">
+      <label class="control-label col-md-2" for="EndDate">End Date:</label>
+      <div class="col-md-8">
+        <input type="date" id="EndDate" class="form-control" formControlName="endDate"/>
+      </div>
+    </div>
+    <div class="row form-group">
+      <label class="control-label col-md-2" for="endTime">End Time:</label>
+      <div class="col-md-8">
+        <input type="time" id="endTime" class="form-control" formControlName="endTime"/>
+      </div>
+    </div>
+    <div class="row form-group">
+      <button class="col-lg-offset-5 btn btn-default" type="submit" [disabled]="!workoutForm.valid">End</button>
+      <button class="btn btn-default" type="button" (click)="backToDashboard()">Cancel</button>
+    </div>
+  </form>
+</div>
+</div>

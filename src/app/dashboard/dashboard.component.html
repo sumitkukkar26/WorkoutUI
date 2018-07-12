@@ -1,0 +1,26 @@
+<div class="dashboard">
+  <div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <input type="search" placeholder="Search" class="form-control" name="query" [(ngModel)]="query"/>
+    </div>
+  </div>
+  <div class="row">
+      <div class="col-md-8">
+      <ul class="list-group pdt">
+      <li class="list-group-item" *ngFor="let workout of workouts | searchWorkout: query; let i = index"> 
+          <div class="row">
+            <h3><span class="label label-default col-md-12">{{workout.workoutTitle}}</span></h3>
+            </div>
+            <div class="row pdt pdl" >
+              <button type="button" class="col-md-2 btn btn-default" (click)="editWorkout(workout)">Edit</button>
+              <button type="button" class="col-md-2 col-md-offset-1 btn btn-default" (click)="deleteWorkout(workout)">Delete</button>
+              <button type="button" class="col-md-2 col-md-offset-1 btn btn-default" [disabled]="setDisabled(workout)" (click)="startWorkout(workout)">Start</button>
+              <button type="button" class="col-md-2 col-md-offset-1 btn btn-default" [disabled]="!setDisabled(workout)" (click)="endWorkout(workout)">End</button>
+            </div>
+       </li>
+    </ul>
+    </div> 
+  </div>
+  </div>
+</div>

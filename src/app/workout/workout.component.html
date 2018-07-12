@@ -1,0 +1,66 @@
+<div class="workout">
+  <div class="container">
+  <form  class="form-horizontal" [formGroup]="workoutForm" (ngSubmit)="save()">
+    <h3 class="text-center">Add Workout</h3>
+    <div class="row form-group">
+      <label class="control-label col-md-2" for="title">Title:</label>
+      <div class="col-md-8">
+        <input type="text" id="title" class="form-control" formControlName="workoutTitle" />
+      </div>
+    </div>
+    <div class="row form-group">
+        <label class="control-label col-md-2" for="note">Note:</label>
+        <div class="col-md-8">
+          <textarea class="form-control" id="note" rows="3" formControlName="workoutNote"></textarea>
+        </div>
+    </div>
+    <div class="row form-group">
+        <label class="control-label col-md-2" for="cal">Calories Burnt Per Min.</label>
+        <div class="col-md-8">
+          <div class=" input-group">
+            <input type="number" name="cal" id="cal" class="form-control input-number" min="0" step="0.1" formControlName="caloriesBurnPerMin" />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default btn-number" (click)="incrementValue()" data-type="plus" data-field="cal">
+                  <span class="glyphicon glyphicon-plus"></span>
+                </button>
+              </span>
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default btn-number" [disabled]="checkCal()" (click)="decrementValue()" data-type="minus" data-field="cal">
+                  <span class="glyphicon glyphicon-minus"></span>
+                </button>
+              </span>
+          </div>
+        </div>
+    </div>
+    <div class="row form-group">
+        <label class="control-label col-md-2" for="cat">Category:</label>
+        <div class="col-md-8">
+          <div class="input-group">
+          <select class="form-control" id="cat" formControlName="category">
+            <option *ngFor="let cat of categories" [ngValue]="cat">{{cat.categoryName}}</option>
+          </select>
+        
+        <span class="input-group-btn">
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">
+            <span class="glyphicon glyphicon-plus"></span>
+        </button>
+      </span>
+    </div>
+      </div>
+    </div>
+    <div class="row form-group">
+      <button class="col-lg-offset-5 btn btn-submit" type="submit" [disabled]="!workoutForm.valid">Add Workout</button>
+    </div>
+  </form>
+  <div id="myModal" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <category></category>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal" (click)="getCategories()">Close</button>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+</div>

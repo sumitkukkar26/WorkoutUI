@@ -1,0 +1,15 @@
+<div class="workout">
+    <div class="container">
+        <div class="text-center"><h3>Workout Time of Day : {{dayWorkoutDuration}} mins</h3></div>
+        <div class="text-center"><h3>Workout Time of Week : {{weeklyWorkoutDuration}} mins</h3></div>
+        <div class="text-center"><h3>Workout Time of Month : {{monthlyWorkoutDuration}} mins</h3></div>
+        <div [chart]="weeklyChart"></div>
+        <div class="text-center"><h3>Week Total Calories Burnt: {{weekTotalCalories}}</h3></div>
+        <div [chart]="monthlyChart"></div>
+        <div class="text-center"><h3>Month Total Calories Burnt: {{monthTotalCalories}}</h3></div>
+        <div [chart]="yearlyChart"></div>
+        <div class="text-center"><h3>Year Total Calories Burnt: {{yearTotalCalories}}</h3></div>
+    </div>
+</div>
+
+
