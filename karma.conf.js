@@ -4,6 +4,8 @@
 module.exports = function (config) {
   config.set({
     basePath: '',
+    browserDisconnectTimeout: 100000,
+    browserNoActivityTimeout: 100000,
     frameworks: ['jasmine', '@angular/cli'],
     plugins: [
       require('karma-jasmine'),

@@ -12,6 +12,7 @@ export class DashboardComponent implements OnInit  {
   workouts = [];
   startFlag :boolean;
   index: Number;
+  query: string;
  
   constructor(private ws: WorkoutService, private router: Router) { 
   }

@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { FormsModule } from '@angular/forms'
 import { CategoryComponent } from './category.component';
+import { SearchCategoryPipe } from '../search-category.pipe';
+import { CategoryService } from '../category.service';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('CategoryComponent', () => {
   let component: CategoryComponent;
@@ -8,7 +11,9 @@ describe('CategoryComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CategoryComponent ]
+    imports:[FormsModule, HttpClientModule],
+    declarations: [ CategoryComponent, SearchCategoryPipe ],
+    providers: [CategoryService]
     })
     .compileComponents();
   }));

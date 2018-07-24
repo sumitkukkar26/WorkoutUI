@@ -27,7 +27,7 @@ export class WorkoutEditComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.cs.getCategory().subscribe(categories => this.categories = categories);
+    this.getCategories();
     this.id = this.route.snapshot.paramMap.get('ID');
     this.ws.getWorkoutByIndex(this.id).subscribe(workout => {
       this.workoutForm = this.fb.group({
@@ -40,6 +40,10 @@ export class WorkoutEditComponent implements OnInit {
       this.workout = workout; 
     });
     this.origWorkout = this.workout; 
+  }
+
+  getCategories(): void {
+    this.cs.getCategory().subscribe(categories => this.categories = categories);
   }
 
   editWorkout(): void {

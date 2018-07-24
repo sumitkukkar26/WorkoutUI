@@ -10,10 +10,11 @@ import { Category } from '../category';
 export class CategoryComponent implements OnInit {
 
   
-  private categories;
-  private category: Category;
+  categories;
+  category: Category;
   private editLabel: String;
   private index;
+  query: String;
   
   constructor(private categoryService: CategoryService) { 
     this.categories = [];
