@@ -11,7 +11,7 @@ export class WorkoutService {
   startFlag = false;
   index: Number;
   private activeWorkoutDetails : WorkoutDetails;
-  private workoutUrl = "http://localhost:8080/workout";
+  private workoutUrl = "http://localhost:8090/workout";
   private httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };

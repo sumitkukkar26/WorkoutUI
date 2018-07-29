@@ -6,7 +6,7 @@ import { Category } from './category';
 @Injectable()
 export class CategoryService {
 
-  private categoriesUrl = 'http://localhost:8080/category';  // URL to web api
+  private categoriesUrl = 'http://localhost:8090/category';  // URL to web api
   private httpOptions = {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     };
